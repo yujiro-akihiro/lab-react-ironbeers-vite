@@ -1,9 +1,11 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom'; // this!
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
@@ -11,3 +13,12 @@ root.render(
     </Router>
   </React.StrictMode>
 );
+// src/main.jsx
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// root.render(
+//   <Router>
+//     <App />
+//   </Router>
+// );

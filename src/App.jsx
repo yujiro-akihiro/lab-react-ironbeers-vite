@@ -1,9 +1,11 @@
-import "./App.css";
-import HomePage from "./pages/HomePage";
-import AllBeersPage from "./pages/AllBeersPage";
-import RandomBeerPage from "./pages/RandomBeerPage";
-import AddBeerPage from "./pages/AddBeerPage";
-import BeerDetailsPage from "./pages/BeerDetailsPage";
+// src/App.jsx
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import AllBeersPage from './pages/AllBeersPage';
+import RandomBeerPage from './pages/RandomBeerPage';
+import AddBeerPage from './pages/AddBeerPage';
+import BeerDetailsPage from './pages/BeerDetailsPage';
 
 function App() {
   return (
