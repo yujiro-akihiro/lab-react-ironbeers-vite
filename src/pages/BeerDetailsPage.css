@@ -1,0 +1,44 @@
+/* src/pages/BeerDetailsPage.css */
+.beer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto; /* 上部に余白を追加 */
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .beer-image {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .beer-info {
+    flex: 1;
+    text-align: left; /* テキストを左寄せ */
+  }
+  
+  .beer-info h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* タイトルを太文字 */
+  }
+  
+  .beer-info p {
+    margin: 5px 0;
+  }
+  
+  .beer-info p strong {
+    font-weight: bold; /* 太文字 */
+  }
+  
+  .beer-info a {
+    color: #00bfff;
+    text-decoration: none;
+  }
+  

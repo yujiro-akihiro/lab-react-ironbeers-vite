@@ -1,7 +1,9 @@
+/* src/pages/PageStyles.css */
 .beers-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px; /* 上部に余白を追加 */
 }
 
 .beer-item {
@@ -23,15 +25,21 @@
 
 .beer-info {
   flex: 1;
+  text-align: left; /* テキストを左寄せ */
 }
 
 .beer-info h2 {
   margin: 0;
   font-size: 20px;
+  font-weight: bold; /* タイトルを太文字 */
 }
 
 .beer-info p {
   margin: 5px 0;
+}
+
+.beer-info p strong {
+  font-weight: bold; /* 太文字 */
 }
 
 .beer-info a {

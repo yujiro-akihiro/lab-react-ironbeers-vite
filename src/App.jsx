@@ -1,13 +1,11 @@
-// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import Navbar from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AllBeersPage from './pages/AllBeersPage';
 import RandomBeerPage from './pages/RandomBeerPage';
 import AddBeerPage from './pages/AddBeerPage';
 import BeerDetailsPage from './pages/BeerDetailsPage';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
