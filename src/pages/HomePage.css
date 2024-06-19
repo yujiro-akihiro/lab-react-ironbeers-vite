@@ -1,0 +1,13 @@
+/* src/pages/HomePage.css */
+.home-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .section-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  

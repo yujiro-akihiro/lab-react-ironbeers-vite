@@ -1,18 +1,29 @@
 // src/pages/HomePage.jsx
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import AllBeersPage from "./AllBeersPage";
+import RandomBeerPage from "./RandomBeerPage";
+import AddBeerPage from "./AddBeerPage";
+import "./HomePage.css";
 
 function HomePage() {
   return (
-    <div>
-      <h1>IronBeers</h1>
-      <nav>
-        <ul>
-          <li><Link to="/beers">All Beers</Link></li>
-          <li><Link to="/random-beer">Random Beer</Link></li>
-          <li><Link to="/new-beer">New Beer</Link></li>
-        </ul>
-      </nav>
+    <div className="home-page">
+      <div className="section-link">
+        <Link to="/beers">
+          <AllBeersPage />
+        </Link>
+      </div>
+      <div className="section-link">
+        <Link to="/random-beer">
+          <RandomBeerPage />
+        </Link>
+      </div>
+      <div className="section-link">
+        <Link to="/new-beer">
+          <AddBeerPage />
+        </Link>
+      </div>
     </div>
   );
 }

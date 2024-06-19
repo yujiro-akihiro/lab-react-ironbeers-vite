@@ -1,0 +1,26 @@
+/* src/pages/PageStyles.css */
+.section {
+    margin-bottom: 40px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .section-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .section-content {
+    padding: 20px;
+  }
+  
+  .section h2 {
+    margin-top: 0;
+  }
+  
+  .section p {
+    color: #555;
+  }
+  
