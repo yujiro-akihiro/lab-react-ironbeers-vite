@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import AllBeersPage from './pages/AllBeersPage';

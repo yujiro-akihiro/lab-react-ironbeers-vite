@@ -1,20 +1,35 @@
-// src/pages/AllBeersPage.jsx
-import React from "react";
-import allBeersImg from "../assets/beers.png";
-import "./PageStyles.css";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import './PageStyles.css';
 
 function AllBeersPage() {
+  const [beers, setBeers] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://ih-beers-api2.herokuapp.com/beers')
+      .then(response => {
+        console.log(response.data);
+        setBeers(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching beers:', error);
+      });
+  }, []);
+
   return (
-    <div className="section">
-      <img src={allBeersImg} alt="All Beers" className="section-image" />
-      <div className="section-content">
-        <h2>All Beers</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          pharetra egestas lectus, sit amet eleifend ex tincidunt in. Nam dictum
-          arcu ut dignissim varius.
-        </p>
-      </div>
+    <div className="beers-list">
+      {beers.map(beer => (
+        <div key={beer._id} className="beer-item">
+          <img src={beer.image_url} alt={beer.name} className="beer-image" />
+          <div className="beer-info">
+            <h2>{beer.name}</h2>
+            <p>{beer.tagline}</p>
+            <p><strong>Contributed by:</strong> {beer.contributed_by}</p>
+            <Link to={`/beers/${beer._id}`}>View Details</Link>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
