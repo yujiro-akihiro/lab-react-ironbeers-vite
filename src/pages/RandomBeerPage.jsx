@@ -1,19 +1,39 @@
-// src/pages/RandomBeerPage.jsx
-import React from "react";
-import randomBeerImg from "../assets/random-beer.png";
-import "./PageStyles.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './BeerDetailsPage.css';
 
 function RandomBeerPage() {
+  const [beer, setBeer] = useState(null);
+
+  useEffect(() => {
+    axios.get('https://ih-beers-api2.herokuapp.com/beers/random')
+      .then(response => {
+        console.log(response.data);
+        setBeer(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching random beer:', error);
+      });
+  }, []);
+
+  if (!beer) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="section">
-      <img src={randomBeerImg} alt="Random Beer" className="section-image" />
-      <div className="section-content">
-        <h2>Random Beer</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          pharetra egestas lectus, sit amet eleifend ex tincidunt in. Nam dictum
-          arcu ut dignissim varius.
-        </p>
+    <div className="beer-details">
+      <img src={beer.image_url} alt={beer.name} className="beer-image" />
+      <div className="beer-info">
+        <div className="header">
+          <h2>{beer.name}</h2>
+          <span className="attenuation-level">{beer.attenuation_level}</span>
+        </div>
+        <div className="tagline-first-brewed">
+          <p className="tagline">{beer.tagline}</p>
+          <span className="first-brewed">{beer.first_brewed}</span>
+        </div>
+        <p className="description">{beer.description}</p>
+        <p className="contributed"><strong>Contributed by:</strong> {beer.contributed_by}</p>
       </div>
     </div>
   );
